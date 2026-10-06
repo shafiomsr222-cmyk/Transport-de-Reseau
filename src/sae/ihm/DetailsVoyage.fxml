@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane prefHeight="500.0" prefWidth="700.0"
+      xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="sae.ihm.DetailsVoyageController"
+      style="-fx-background-color: #FAFAFA;">
+   <children>
+      <VBox spacing="0" style="-fx-padding: 30;">
+         <children>
+
+            <!-- En-tête -->
+            <HBox alignment="CENTER_LEFT" spacing="12">
+               <children>
+                  <Button text="← Retour" onAction="#retourResultats"
+                          style="-fx-background-color: #EFEFEF; -fx-text-fill: #1A1A1A; -fx-font-weight: bold; -fx-background-radius: 8; -fx-padding: 8 18;"/>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Label fx:id="dateLabel" style="-fx-font-size: 12px; -fx-text-fill: #BBBBBB;"/>
+               </children>
+            </HBox>
+
+            <!-- Bloc titre -->
+            <VBox spacing="6" style="-fx-padding: 28 0 24 0;">
+               <children>
+                  <Label fx:id="badgeLabel" style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #999999;"/>
+                  <HBox spacing="14" alignment="CENTER_LEFT">
+                     <children>
+                        <Label fx:id="villeDepart" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #1A1A1A;"/>
+                        <Label text="→" style="-fx-font-size: 26px; -fx-text-fill: #BBBBBB;"/>
+                        <Label fx:id="villeArrivee" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #1A1A1A;"/>
+                     </children>
+                  </HBox>
+                  <Label fx:id="critereLabel" style="-fx-font-size: 13px; -fx-text-fill: #999999;"/>
+               </children>
+            </VBox>
+
+            <!-- Coûts -->
+            <HBox spacing="0" style="-fx-background-color: white; -fx-background-radius: 14; -fx-padding: 22; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 8, 0, 0, 2);">
+               <children>
+                  <VBox spacing="4" HBox.hgrow="ALWAYS" alignment="CENTER">
+                     <children>
+                        <Label fx:id="prixLabel" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #1A1A1A;"/>
+                        <Label text="Prix" style="-fx-font-size: 11px; -fx-text-fill: #999999;"/>
+                     </children>
+                  </VBox>
+                  <Region style="-fx-pref-width: 1; -fx-background-color: #EFEFEF;"/>
+                  <VBox spacing="4" HBox.hgrow="ALWAYS" alignment="CENTER">
+                     <children>
+                        <Label fx:id="tempsLabel" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #1A1A1A;"/>
+                        <Label text="Temps" style="-fx-font-size: 11px; -fx-text-fill: #999999;"/>
+                     </children>
+                  </VBox>
+                  <Region style="-fx-pref-width: 1; -fx-background-color: #EFEFEF;"/>
+                  <VBox spacing="4" HBox.hgrow="ALWAYS" alignment="CENTER">
+                     <children>
+                        <Label fx:id="co2Label" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #1A1A1A;"/>
+                        <Label text="Émissions CO2" style="-fx-font-size: 11px; -fx-text-fill: #999999;"/>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+
+            <!-- Itinéraire -->
+            <Label text="Itinéraire" style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #1A1A1A; -fx-padding: 28 0 12 0;"/>
+
+            <ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-background: transparent;" VBox.vgrow="ALWAYS">
+               <content>
+                  <VBox fx:id="etapesBox" spacing="0" style="-fx-background-color: white; -fx-background-radius: 14; -fx-padding: 22; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 8, 0, 0, 2);"/>
+               </content>
+            </ScrollPane>
+
+         </children>
+      </VBox>
+   </children>
+</StackPane>

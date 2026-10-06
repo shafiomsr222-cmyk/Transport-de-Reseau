@@ -1,0 +1,15 @@
+Paris;Lille;TRAIN;35.0;1.2;65
+Lille;Bruxelles;TRAIN;19.5;0.8;40
+Paris;Bruxelles;TRAIN;55.0;2.1;85
+Paris;Lyon;TRAIN;65.0;2.5;125
+Lyon;Marseille;TRAIN;40.0;1.8;105
+Paris;Marseille;AVION;110.0;130.5;80
+Paris;Lyon;AVION;80.0;85.0;60
+Lyon;Marseille;AVION;55.0;45.0;50
+Bruxelles;Lyon;AVION;145.0;120.0;95
+Paris;Lille;BUS;15.0;4.0;170
+Lille;Bruxelles;BUS;9.0;2.5;100
+Paris;Bruxelles;BUS;20.0;5.5;230
+Paris;Lyon;BUS;28.0;8.0;350
+Lyon;Marseille;BUS;18.0;4.5;200
+Paris;Marseille;BUS;35.0;12.0;480

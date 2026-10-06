@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane prefHeight="500.0" prefWidth="700.0"
+      xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="sae.ihm.RechercheController"
+      style="-fx-background-color: #F4F7F6;">
+   <children>
+      <VBox spacing="20" style="-fx-padding: 30;">
+         <children>
+
+            <!-- En-tête -->
+            <HBox alignment="CENTER_LEFT" spacing="10">
+               <children>
+                  <Label fx:id="nomLabel" text="Bonjour !" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #1B4332;"/>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Button mnemonicParsing="false" onAction="#allerHistorique" text="🕘 Historique"
+                          style="-fx-background-color: #E8F0EE; -fx-text-fill: #1B4332; -fx-font-weight: bold; -fx-background-radius: 8; -fx-padding: 8 16;"/>
+               </children>
+            </HBox>
+
+            <!-- Card principale -->
+            <VBox spacing="18" style="-fx-background-color: white; -fx-background-radius: 16; -fx-padding: 28; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 12, 0, 0, 4);">
+               <children>
+
+                  <Label text="Planifiez votre voyage" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #1B4332;"/>
+
+                  <!-- Villes -->
+                  <HBox spacing="20">
+                     <children>
+                        <VBox spacing="6" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label text="DÉPART" style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #6C8C82;"/>
+                              <MenuButton fx:id="departMenu" text="Choisissez votre ville" maxWidth="Infinity"
+                                          style="-fx-background-color: #F0F4F3; -fx-background-radius: 8; -fx-padding: 10 14; -fx-font-size: 14px;"/>
+                           </children>
+                        </VBox>
+                        <VBox spacing="6" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label text="ARRIVÉE" style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #6C8C82;"/>
+                              <MenuButton fx:id="arriveeMenu" text="Choisissez votre ville" maxWidth="Infinity"
+                                          style="-fx-background-color: #F0F4F3; -fx-background-radius: 8; -fx-padding: 10 14; -fx-font-size: 14px;"/>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+
+                  <!-- Transport -->
+                  <VBox spacing="8">
+                     <children>
+                        <Label text="MODE DE TRANSPORT" style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #6C8C82;"/>
+                        <HBox spacing="24">
+                           <children>
+                              <RadioButton fx:id="radioTrain" text="🚆 Train" style="-fx-font-size: 14px;"/>
+                              <RadioButton fx:id="radioBus" text="🚌 Bus" style="-fx-font-size: 14px;"/>
+                              <RadioButton fx:id="radioAvion" text="✈️ Avion" style="-fx-font-size: 14px;"/>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+
+                  <!-- Critère + durée max -->
+                  <HBox spacing="30">
+                     <children>
+                        <VBox spacing="8" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label text="CRITÈRE PRINCIPAL" style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #6C8C82;"/>
+                              <CheckBox fx:id="checkEmission" text="🌱 Émissions CO2" style="-fx-font-size: 14px;"/>
+                              <CheckBox fx:id="checkPrix" text="💶 Prix" style="-fx-font-size: 14px;"/>
+                              <CheckBox fx:id="checkTemps" text="⏱ Temps" style="-fx-font-size: 14px;"/>
+                           </children>
+                        </VBox>
+                        <VBox spacing="8">
+                           <children>
+                              <Label text="DURÉE MAX (min, optionnel)" style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #6C8C82;"/>
+                              <TextField fx:id="dureeMaxField" promptText="ex : 480" prefWidth="160"
+                                         style="-fx-background-color: #F0F4F3; -fx-background-radius: 8; -fx-padding: 10 14; -fx-font-size: 14px;"/>
+                              <Label fx:id="erreurLabel" textFill="#D9534F" style="-fx-font-size: 12px;"/>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+
+               </children>
+            </VBox>
+
+            <!-- Bouton recherche -->
+            <HBox alignment="CENTER_RIGHT">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#nextPage" text="Rechercher mon trajet  →"
+                          style="-fx-background-color: #2D6A4F; -fx-text-fill: white; -fx-font-size: 15px; -fx-font-weight: bold; -fx-background-radius: 10; -fx-padding: 12 28;"/>
+               </children>
+            </HBox>
+
+         </children>
+      </VBox>
+   </children>
+</StackPane>
